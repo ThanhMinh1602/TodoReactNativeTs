@@ -2,7 +2,7 @@ import {View, Text, StatusBar} from 'react-native';
 import React from 'react';
 import Container from '../../components/container';
 
-const HomeScreen = () => {
+const HomeScreen: React.FC = () => {
   return (
     <Container>
       <Text></Text>

@@ -1,4 +1,4 @@
-import {ScrollView, ViewStyle} from 'react-native';
+import {ScrollView} from 'react-native';
 import React, {ReactNode} from 'react';
 import {globalStyles} from '../styles/global_style';
 

@@ -6,22 +6,15 @@
  */
 
 import React from 'react';
+import RootNavigator from './src/navigator/RootNavigator';
+import {NavigationContainer} from '@react-navigation/native';
 
-import {StatusBar} from 'react-native';
-
-import SplashScreen from './src/screens/splash/SplashScreen';
-
-function App(): React.JSX.Element {
+const App: React.FC = () => {
   return (
-    <>
-      <StatusBar
-        translucent
-        barStyle={'light-content'}
-        backgroundColor="rgba(0, 0, 0, 0.0)"
-      />
-      <SplashScreen />
-    </>
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
   );
-}
+};
 
 export default App;
