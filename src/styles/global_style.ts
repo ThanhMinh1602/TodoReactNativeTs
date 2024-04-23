@@ -11,9 +11,10 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: colors.backgroundColor
     },
     loginForm: {
+        flex: 1,
         paddingHorizontal: 20,
         paddingTop: 41,
-        paddingBottom: 36
+        paddingBottom: 30
     },
     inputStyle: {
         backgroundColor: colors.placeHolderColor,

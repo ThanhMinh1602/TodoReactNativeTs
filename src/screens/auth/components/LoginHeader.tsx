@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import textStyle from '../constants/textStyle';
+import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
+import textStyle from '../../../constants/textStyle';
+import imagePaths from '../../../constants/imagePaths';
 
 interface LoginHeaderProps {
   title: string;
@@ -11,12 +12,17 @@ const LoginHeader: React.FC<LoginHeaderProps> = ({title, onBackPress}) => {
   return (
     <View style={styles.header}>
       {onBackPress ? (
-        <TouchableOpacity onPress={onBackPress}></TouchableOpacity>
+        <TouchableOpacity onPress={onBackPress}>
+          <Image
+            style={{width: 24, height: 24}}
+            source={imagePaths.iconsPng.back}
+          />
+        </TouchableOpacity>
       ) : (
-        <View />
+        <View style={{width: 24, height: 24}} />
       )}
       <Text style={textStyle.semiBold16}>{title}</Text>
-      <View />
+      <View style={{width: 24, height: 24}} />
     </View>
   );
 };
