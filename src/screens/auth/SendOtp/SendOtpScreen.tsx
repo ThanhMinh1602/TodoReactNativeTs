@@ -11,7 +11,8 @@ const SendOtpScreen: React.FC = () => {
     <SafeAreaView style={globalStyles.container}>
       <View style={globalStyles.loginForm}>
         <Text style={textStyle.semiBold16}>Verification Code</Text>
-        <Text style={[textStyle.semiBold16Gr, {marginTop: 20, marginBottom: 100}]}>
+        <Text
+          style={[textStyle.semiBold16Gr, {marginTop: 20, marginBottom: 100}]}>
           We have sent the verification code to your email address
         </Text>
         <OtpTextInput handleTextChange={console.log} />

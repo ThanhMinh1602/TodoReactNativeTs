@@ -9,7 +9,7 @@ import imagePaths from '../../../constants/imagePaths';
 import Row from '../../../components/Row';
 import {useAppNavigation} from '../../../utils/useAppNavigation';
 import {useState} from 'react';
-import {colors} from '../../../constants/colors';
+import {sendOtp} from '../../../api/services/auth_service';
 
 const RegisterScreen: React.FC = () => {
   const navigation = useAppNavigation();
@@ -18,11 +18,12 @@ const RegisterScreen: React.FC = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [errors, setErrors] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const goToLogin = () => {
     navigation.goBack();
   };
 
-  const onTapNext = () => {
+  const onTapNext = async () => {
     if (!fullName) {
       return setErrors('Name is required.');
     }
@@ -42,6 +43,10 @@ const RegisterScreen: React.FC = () => {
       return setErrors('Password confirm is valid.');
     }
     setErrors('');
+    setIsLoading(true);
+    const data = await sendOtp(email);
+    console.log(data);
+    setIsLoading(false);
     navigation.navigate('NavigatorStack', {
       params: {fullName, email, password},
       screen: 'SendOtp',
@@ -86,6 +91,7 @@ const RegisterScreen: React.FC = () => {
             </Center>
           )}
           <ButtonCustom
+            isLoading={isLoading}
             style={{marginTop: errors != '' ? 10 : 57}}
             textButton="Next"
             onPress={onTapNext}
