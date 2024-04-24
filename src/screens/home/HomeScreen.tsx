@@ -1,12 +1,13 @@
-import {View, Text, StatusBar} from 'react-native';
+import {Text, View} from 'react-native';
 import React from 'react';
-import Container from '../../components/container';
+import {globalStyles} from '../../styles/global_style';
+import textStyle from '../../constants/textStyle';
 
 const HomeScreen: React.FC = () => {
   return (
-    <Container>
-      <Text></Text>
-    </Container>
+    <View style={globalStyles.container}>
+      <Text style={textStyle.semiBold16}>HomeScreen</Text>
+    </View>
   );
 };
 

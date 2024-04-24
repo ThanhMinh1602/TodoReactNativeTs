@@ -8,4 +8,5 @@ export type NavigatorStackParamListType = {
   Login: undefined;
   Register: undefined;
   SendOtp: {fullName: string; email: string; password: string};
+  Home: undefined;
 };

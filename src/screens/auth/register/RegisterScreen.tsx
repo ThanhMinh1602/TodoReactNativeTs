@@ -45,7 +45,7 @@ const RegisterScreen: React.FC = () => {
     setErrors('');
     setIsLoading(true);
     const data = await sendOtp(email);
-    console.log(data);
+    console.log('OTP Response', data);
     setIsLoading(false);
     navigation.navigate('NavigatorStack', {
       params: {fullName, email, password},
@@ -54,8 +54,8 @@ const RegisterScreen: React.FC = () => {
   };
   return (
     <View style={globalStyles.container}>
+      <LoginHeader title="Sign Up" onBackPress={goToLogin} />
       <ScrollView style={globalStyles.container}>
-        <LoginHeader title="Sign Up" onBackPress={goToLogin} />
         <View style={globalStyles.loginForm}>
           <Text style={textStyle.semiBold14}>Full name</Text>
           <TextInputCustom

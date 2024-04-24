@@ -6,6 +6,10 @@ export const globalStyles = StyleSheet.create({
     row: {
         flexDirection: 'row'
     },
+    iconStyle: {
+        width: 24,
+        height: 24,
+    },
     container: {
         flex: 1,
         backgroundColor: colors.backgroundColor

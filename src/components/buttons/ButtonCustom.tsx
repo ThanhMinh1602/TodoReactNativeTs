@@ -8,7 +8,7 @@ import {
   Image,
   GestureResponderEvent,
 } from 'react-native';
-import React, {ReactNode} from 'react';
+import React from 'react';
 import textStyle from '../../constants/textStyle';
 import {colors} from '../../constants/colors';
 import Row from '../Row';
